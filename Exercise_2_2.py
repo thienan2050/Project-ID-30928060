@@ -18,13 +18,13 @@ def MaxwellSpeedDistribution(v, m, T):
 v = np.arange(0, 100)
 def f1(v):
     return 1.6243*np.exp(-9)*(v**2)*np.exp(-8.0314*np.exp(-7)*v**2)
-#plt.plot(v, f1(v))
+plt.plot(v, f1(v))
 #plt.show()
 
 # (ii)
 def f2(v):
     return 4.9352*np.exp(-9)*(v**2)*np.exp(-1.6848*np.exp(-6)*v**2)
-#plt.plot(v, f2(v))
+plt.plot(v, f2(v))
 #plt.show()
 
 #-----------------------------------------------------------------------------------
@@ -36,5 +36,6 @@ print(Simpson(f2, 15.0, 25.0, 1000))
 
 # (ii) scipy.integrate.quad()
 from scipy import integrate
-print(integrate.quad(f1, 15, 25))
-print(integrate.quad(f2, 15, 25))
+print(integrate.quad(f1, 15, 25)[0])
+print(integrate.quad(f2, 15, 25)[0])
+plt.show()
