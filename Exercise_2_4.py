@@ -16,11 +16,14 @@ x = np.linspace(0, 20, 100)
 J0 = [J(0, _) for _ in x]
 J1 = [J(1, _) for _ in x]
 J2 = [J(2, _) for _ in x]
-#plt.xlim(0, 20)
-#plt.plot(x, J0)
-#plt.plot(x, J1)
-#plt.plot(x, J2)
-#plt.show()
+plt.xlim(0, 20)
+plt.plot(x, J0, label = 'J0(x)')
+plt.plot(x, J1, label = 'J1(x)')
+plt.plot(x, J2, label = 'J2(x)')
+plt.xlabel('x')
+plt.grid()
+plt.legend()
+plt.show()
 
 # b)
 def Intensity(lamda, r):
