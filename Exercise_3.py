@@ -19,7 +19,7 @@ def RungeKutta4(f, x0, t0, tf, dt):
         x[:, k+1] = x[:, k] + dx
     return x, t
 
-f = lambda t, x : LotkaVolteraModel(x, 1.1, 0.4, 0.4, 0.1)
+f = lambda t, x : LotkaVolteraModel(x, 1, 0.5, 2, 0.5)
 x0 = np.array([20, 5])
 t0 = 0
 tf = 30
@@ -28,15 +28,15 @@ dt = 0.001
 x, t = RungeKutta4(f, x0, t0, tf, dt)
 
 plt.subplot(1, 2, 1)
-plt.plot(t, x[0,:], 'r', label = 'Preys')
-plt.plot(t, x[1,:], 'g', label = 'Predators')
+plt.plot(t, x[0,:], 'r', label = 'rabbits')
+plt.plot(t, x[1,:], 'g', label = 'foxes')
 plt.xlabel('Time (t)')
 plt.grid()
 plt.legend()
 
 plt.subplot(1, 2, 2)
 plt.plot(x[0,:], x[1,:])
-plt.xlabel('Preys')
-plt.ylabel('Predators')
+plt.xlabel('rabbits')
+plt.ylabel('foxes')
 plt.grid()
 plt.show()
